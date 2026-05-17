@@ -125,7 +125,7 @@ export default function ContactForm() {
             <button
                 type="submit"
                 disabled={sending}
-                className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-70"
+                className="glass-button text-brand-800 disabled:cursor-not-allowed disabled:opacity-70"
             >
                 {sending ? 'Sending...' : 'Submit message'}
                 <Icon name="Send" className="h-4 w-4" />

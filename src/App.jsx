@@ -15,6 +15,9 @@ const Prescription = lazy(() => import('./pages/Prescription'));
 const Contact = lazy(() => import('./pages/Contact'));
 const About = lazy(() => import('./pages/About'));
 const FAQ = lazy(() => import('./pages/FAQ'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('./pages/TermsConditions'));
+const CancelOrder = lazy(() => import('./pages/CancelOrder'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function ScrollToTop() {
@@ -68,6 +71,9 @@ export default function App() {
                 <Route path="contact" element={<Contact />} />
                 <Route path="about" element={<About />} />
                 <Route path="faq" element={<FAQ />} />
+                <Route path="privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="terms-conditions" element={<TermsConditions />} />
+                <Route path="cancel-order" element={<CancelOrder />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

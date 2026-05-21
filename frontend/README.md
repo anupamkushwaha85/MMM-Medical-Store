@@ -1,6 +1,6 @@
 # Jaya Medical Store Frontend
 
-A professional medical and pharma e-commerce frontend for **Jaya Medical Store**, owned by **Madan Mohan Mishra**. This package now sits inside the shared repo with the backend service, so the project can be maintained as a single monorepo instead of two separate repositories.
+A professional medical and pharma e-commerce frontend for **Jaya Medical Store**, owned by **Madan Mohan Mishra**. This package now sits inside the shared repo with the backend service, so the project is maintained as a single monorepo.
 
 ## Live URL
 
@@ -18,7 +18,7 @@ https://anupamkushwaha85.github.io/Medical-Store-Website/
 
 ## Monorepo Layout
 
-The frontend lives in `frontend/` and the backend lives in `backend/` at the same repository level.
+The repository root contains both packages:
 
 ```text
 mmm-medical-shop/
@@ -77,7 +77,7 @@ npm run dev
 
 ## Deployment
 
-Deployment runs automatically on push to `main` through GitHub Actions. The workflow builds the app and publishes `dist` to GitHub Pages.
+Deployment runs automatically on push to `main` through GitHub Actions from the repository root. The workflow builds the frontend package and publishes `frontend/dist` to GitHub Pages.
 
 ## Folder Structure
 
@@ -101,12 +101,11 @@ Add screenshots here after the first production build or deploy preview.
 
 ## Git Root
 
-Git is currently initialized inside `frontend/`. To use this as a true monorepo, move the Git root up one level so both `frontend/` and `backend/` are tracked together, then keep future commits from the repository root.
+Git is initialized at the repository root, so both `frontend/` and `backend/` are tracked together.
 
 If you are starting fresh, initialize Git at the repo root instead:
 
 ```bash
-cd ..
 git init
 git config user.email "149708150+anupamkushwaha85@users.noreply.github.com"
 git config user.name "anupamkushwaha85"

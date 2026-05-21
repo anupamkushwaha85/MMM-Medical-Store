@@ -1,6 +1,6 @@
-# Jaya Medical Store
+# Jaya Medical Store Frontend
 
-A professional medical and pharma e-commerce frontend for **Jaya Medical Store**, owned by **Madan Mohan Mishra**. The site is built as a responsive React SPA with product browsing, prescription uploads, cart management, contact forms, and GitHub Pages deployment.
+A professional medical and pharma e-commerce frontend for **Jaya Medical Store**, owned by **Madan Mohan Mishra**. This package now sits inside the shared repo with the backend service, so the project can be maintained as a single monorepo instead of two separate repositories.
 
 ## Live URL
 
@@ -16,7 +16,19 @@ https://anupamkushwaha85.github.io/Medical-Store-Website/
 - EmailJS
 - GitHub Actions
 
+## Monorepo Layout
+
+The frontend lives in `frontend/` and the backend lives in `backend/` at the same repository level.
+
+```text
+mmm-medical-shop/
+├── backend/
+└── frontend/
+```
+
 ## Setup
+
+Run these commands from the `frontend/` folder.
 
 1. Install dependencies:
 
@@ -70,6 +82,9 @@ Deployment runs automatically on push to `main` through GitHub Actions. The work
 ## Folder Structure
 
 ```text
+../backend/
+└── server.js
+
 src/
 ├── components/
 ├── context/
@@ -84,17 +99,32 @@ src/
 
 Add screenshots here after the first production build or deploy preview.
 
-## Git Initialization
+## Git Root
+
+Git is currently initialized inside `frontend/`. To use this as a true monorepo, move the Git root up one level so both `frontend/` and `backend/` are tracked together, then keep future commits from the repository root.
+
+If you are starting fresh, initialize Git at the repo root instead:
 
 ```bash
+cd ..
 git init
 git config user.email "149708150+anupamkushwaha85@users.noreply.github.com"
 git config user.name "anupamkushwaha85"
-git remote add origin https://github.com/anupamkushwaha85/Medical-Store-Website.git
-git add .
-git commit -m "feat: initial commit - Jaya Medical Store"
+git remote add origin https://github.com/anupamkushwaha85/MMM-Medical-Store.git
+git add frontend backend
+git commit -m "feat: initialize monorepo"
 git branch -M main
 git push -u origin main
+```
+
+## Backend
+
+The backend package already lives in `backend/` and can be run separately from there:
+
+```bash
+cd ../backend
+npm install
+npm run dev
 ```
 
 ## License
